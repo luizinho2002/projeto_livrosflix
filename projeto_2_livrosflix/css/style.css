@@ -519,3 +519,185 @@ a:hover {
     font-size: 1.2rem;
   }
 }
+
+/* --- ESTILOS PARA PÁGINA DE DETALHES DO LIVRO --- */
+
+.book-details-main {
+  padding-top: calc(
+    var(--header-height) + 48px
+  ); /* Espaçamento do header + extra */
+  padding-bottom: 40px;
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+  min-height: calc(
+    100vh - var(--header-height) - 100px
+  ); /* Garante que o rodapé fique no final */
+}
+
+.book-details-section {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+  gap: 40px; /* Espaço entre a capa e as informações */
+  align-items: flex-start; /* Alinha o topo dos elementos */
+  margin-bottom: 60px;
+}
+
+.book-details-cover {
+  flex-shrink: 0; /* Impede que a capa encolha */
+  width: 300px; /* Largura da capa */
+  height: 450px; /* Altura da capa (proporção 2:3) */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow: hidden; /* Garante que a imagem respeite o border-radius */
+}
+
+.book-details-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagme preencha o contêiner */
+  border-radius: 8px;
+}
+
+.book-details-info {
+  flex-grow: 1; /* Permite que as informações ocupem o espaço restante */
+  max-width: 800px; /* Limita a largura em telas muito largas */
+}
+
+.book-details-info h2 {
+  font-family: var(--font-primary);
+  font-size: 2.8rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.book-details-info p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.book-details-info .book-details-author {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.book-details-info .book-details-genre {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.book-details-info .book-details-year {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.book-details-info .book-details-pages {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.book-details-info .book-details-synopsis {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.book-details-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Reutilizando estilos dos botões da hero-section */
+.book-details-buttons .btn-play,
+.book-details-buttons .btn-info {
+  padding: 12px 25px;
+  font-size: 1rem;
+}
+
+/* Estilos para a seção de livros relacionados */
+.books-carousel-section.related-books {
+  margin-top: 40px;
+}
+
+/* --- RESPONSIVIDADE PARA DETALHES DO LIVRO --- */
+@media (max-width: 1024px) {
+  .book-details-cover {
+    width: 250px;
+    height: 375px;
+  }
+
+  .book-details-info h2 {
+    font-size: 2.2rem;
+  }
+
+  .book-details-info p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-details-section {
+    flex-direction: column; /* Capa e info em coluna */
+    align-items: center; /* Centraliza a capa */
+    text-align: center;
+    gap: 30px;
+  }
+
+  .book-details-cover {
+    width: 200px;
+    height: 300px;
+  }
+
+  .book-details-info {
+    max-width: 100%;
+  }
+
+  .book-details-info h2 {
+    font-size: 2rem;
+  }
+
+  .book-details-info p {
+    font-size: 0.95rem;
+  }
+
+  .book-details-buttons {
+    flex-direction: column;
+    width: 80%; /* Para os botões ocuperam mais espaço */
+    margin: 20px auto 0; /* Centraliza os botões */
+  }
+
+  .book-details-buttons .btn-play,
+  .book-details-buttons .btn-info {
+    width: 100%;
+  }
+
+  .related-books h3 {
+    text-align: left; /* Título de relacionados volta à esquerda */
+  }
+}
+
+@media (max-width: 480px) {
+  .book-details-cover {
+    width: 150px;
+    height: 225px;
+  }
+
+  .book-details-info h2 {
+    font-size: 1.8rem;
+  }
+
+  .book-details-info p {
+    font-size: 0.9rem;
+  }
+}
