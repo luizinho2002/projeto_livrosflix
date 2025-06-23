@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes do Livro - LivroFlix</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="netflix-header">
+      <nav class="netflix-nav">
+        <div class="nav-left">
+          <h1 class="logo"><a href="index.html">LivrosFlix</a></h1>
+          <ul class="main-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="minha-lista.html">Minha Lista</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-right">
+          <button class="icon-button" aria-label="Pesquisar">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="icon-button" aria-label="Perfil do Usuário">
+            <i class="fas fa-user-circle"></i>
+          </button>
+        </div>
+
+        <button class="menu-toggle-mobile" aria-label="Abrir Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="mobile-menu-items">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="minha-lista.html">Minha Lista</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="book-details-main">
+      <section class="book-details-section">
+        <div class="book-details-cover">
+          <img
+            src="img/culpa_minha.png"
+            alt="Capa do Livro Culpa Minha"
+            id="book-details-image"
+          />
+        </div>
+        <div class="book-details-info">
+          <h2 id="book-details-title">Culpa Minha</h2>
+          <p class="book-details-author" id="book-details-author">
+            Autor: Mercedes Ron
+          </p>
+          <p class="book-details-genre" id="book-details-genre">
+            Gênero: Romance, Drama e Suspense
+          </p>
+          <p class="book-details-year" id="book-details-year">
+            Ano de Publicação: 2022
+          </p>
+          <p class="book-details-pages" id="book-details-pages">
+            Número de Páginas: 400
+          </p>
+          <p class="book-details-synopsis" id="book-details-synopsis">
+            Sinopse: Minha Culpa é o primeiro livro da trilogia Culpados,
+            escrita por Mercedes Ron, e conta a história de Noah, uma jovem que
+            precisa se mudar para a mansão do novo marido da mãe na Califórnia.
+            Lá, ela conhece Nick, seu novo meio-irmão, e entre conflitos e
+            atração, nasce uma paixão proibida.
+          </p>
+          <div class="book-details-buttons">
+            <button class="btn-play">
+              <i class="fas fa-book-open"></i> Ler Agora
+            </button>
+            <button class="btn-info">
+              <i class="fas fa-plus"></i> Minha Lista
+            </button>
+            <button class="btn-info">
+              <i class="fas fa-share-alt"></i> Compartilhar
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="books-carousel-section related-books">
+        <h3>Livros Relacionados</h3>
+        <div class="carousel-container">
+          <div class="book-card">
+            <img src="img/culpa_tua.png" alt="Capa do Livro Culpa Tua" />
+            <div class="book-card-info">
+              <h4>Culpa Tua</h4>
+              <p>Mercedes Ron</p>
+            </div>
+          </div>
+          <div class="book-card">
+            <img
+              src="img/culpa_das_estrelas.jpg"
+              alt="Capa do Livro A Culpa É Das Estrelas"
+            />
+            <div class="book-card-info">
+              <h4>A Culpa é Das Estrelas</h4>
+              <p>John Green</p>
+            </div>
+          </div>
+          <div class="book-card">
+            <img
+              src="img/amor_de_verao.png"
+              alt="Capa do Livro Amor de Verão"
+            />
+            <div class="book-card-info">
+              <h4>Amor de Verão</h4>
+              <p>Diana Burin</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="netflix-footer">
+      <p>&copy; 2025 LivrosFlix. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/book-details.js"></script>
+  </body>
+</html>
