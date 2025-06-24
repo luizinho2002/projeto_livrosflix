@@ -701,3 +701,195 @@ a:hover {
     font-size: 0.9rem;
   }
 }
+
+/* Estilos para a seção Minha Lista */
+.my-list-main {
+  padding: 80px 4%; /* Ajuste o padding conforme o necessário */
+  min-height: calc(
+    100vh - 120px
+  ); /* Para o footer ficar no fim da página (ajuste 120px se seu header/footer tiverem outras alturas) */
+  background-color: #141414; /* Cor de fundo escura */
+  color: #e5e5e5; /* Cor do texto */
+}
+
+my-list-section {
+  max-width: 1200px; /* Largura máxima da seção para centralizar */
+  margin: 0 auto; /* Centraliza a seção */
+  padding-bottom: 50px; /* Espaço para o rodapé */
+}
+
+.my-list-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+.my-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsivo */
+  gap: 20px;
+  justify-content: center; /* Centraliza os itens da grade */
+}
+
+/* Estilos para os cards de livro na minhas lista */
+.my-list-card {
+  position: relative;
+  width: 180px; /* Largura padrão para o card */
+  background-color: #222;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.my-list-car:hover {
+  transform: translateY(-5px);
+}
+
+.my-list-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Para o link ocupar todo o espaço do card */
+}
+
+.my-list-card img {
+  width: 100%;
+  height: 270px; /* Altura padrão para as capas (proporção 2:3) */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  border-bottom: 1px solid #333;
+}
+
+.my-list-card .book-card-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.my-list-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #fff;
+  white-space: nowrap; /* Evita quebras de linha */
+  overflow: hidden; /* Oculta o texto que execede */
+  text-overflow: ellipsis; /* Adiciona "..." */
+}
+
+.my-list-card p {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estilos para o botão de remover */
+.remove-from-list-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(220, 20, 60, 0.8); /* Crimson com transparência */
+  color: #fff;
+  border: none;
+  border-radius: 50%; /* Faz um botão circular */
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0; /* Oculta por padrão */
+  transition: opacity 0.2s ease-in-out;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  z-index: 10; /* Garante que o botão fique acima da imagem */
+}
+
+.my-list-card:hover .remove-from-list-btn {
+  opacity: 1; /* Mostra o botão ao passar o mouse */
+}
+
+.remove-from-list-btn:hover {
+  background-color: crimson;
+  transform: scale(1.1);
+}
+
+.remove-from-list-btn i {
+  margin-right: 0; /* Remove margem padrão se houver, para centralizar o ícone */
+}
+
+/* Mensagem de lista vazia */
+#empty-list-message {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #ccc;
+  margin-top: 50px;
+}
+
+/* Media Queries para Responsividade (ajuste conforme seu design) */
+@media (max-width: 768px) {
+  .my-list-main {
+    padding-top: 60px; /* Ajusta para mobile */
+  }
+  .my-list-section h2 {
+    font-size: 2rem;
+  }
+  .my-list-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .my-list-card {
+    width: 150px;
+  }
+  .my-list-card img {
+    height: 225px;
+  }
+  .remove-from-list-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-list-main {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  .my-list-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  .my-list-card {
+    width: 120px;
+  }
+  .my-list-card img {
+    height: 180px;
+  }
+  .my-list-card h4 {
+    font-size: 1rem;
+  }
+  .my-list-card p {
+    font-size: 0.8rem;
+  }
+  .remove-from-list-btn {
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Adicione também o CSS para a classe .current-page se ainda não o fez */
+/* Estilo para o item de menu da página atual */
+.main-menu li.current-page a,
+.mobile-menu-items li.current-page a {
+  color: #fff; /* Uma cor diferente, como branco puro */
+  font-weight: bold; /* Deixa o texto mais evidente */
+  pointer-events: none; /* Torna o link não clicável */
+  cursor: default; /* Altera o cursor para indicar que não é clicável */
+  border-bottom: 2px solid #e50914; /* Adiciona uma linha embaixo para destaque */
+  padding-bottom: 2px; /* Espaçemento para a linha */
+}
+
+/* Opcional: Remover o hover/active do link da página atual */
+.main-menu li.current-page a:hover,
+.mobile-menu-items li.current-page a:hover {
+  color: #fff; /* Mantém a cor mesmo no hover */
+  border-bottom: #e50914; /* Mantém a cor da borda */
+}
